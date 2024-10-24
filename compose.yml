@@ -56,7 +56,6 @@ services:
     restart: unless-stopped
     environment:
       PGADMIN_LISTEN_PORT: 8080
-      PGADMIN_CONFIG_ALLOW_SPECIAL_EMAIL_DOMAINS: '["localhost"]'
     env_file:
       - .env
     volumes:
@@ -133,10 +132,8 @@ services:
     ports:
       - '127.0.0.1:80:80'
       - '127.0.0.1:443:443'
-      - '127.0.0.1:2019:2019'
     networks:
       - web
-      - homepage
     labels:
       com.centurylinklabs.watchtower.enable: true
 
